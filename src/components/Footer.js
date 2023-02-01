@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Footer = styled.footer`
+const StyledFooter = styled.footer`
     background-color: #ded;
     position: fixed;
     bottom: 0;
@@ -14,5 +14,11 @@ const Footer = styled.footer`
         text-align: center;
     }
 `;
+
+const Footer = () => (
+    <StyledFooter>
+        <p>Scandiweb Test assignment</p>
+    </StyledFooter>
+);
 
 export default Footer;

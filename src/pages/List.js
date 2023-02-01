@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Button from '../components/Button';
-
+import Header from '../components/styles/Header';
+import Button from '../components/styles/Button';
 
 export default function List() {
   return (

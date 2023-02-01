@@ -10,9 +10,7 @@ function App() {
         <Route path="/" element={<List />} />
         <Route path="/addproduct" element={<Add />} />
       </Routes>
-      <Footer>
-        <p>Scandiweb Test assignment</p>
-      </Footer>
+      <Footer />
     </div>
   );
 }
