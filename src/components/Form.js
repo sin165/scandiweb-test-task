@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import StyledForm from "../components/styles/Form.styled";
+import { validateForm } from '../utils/validateForm';
 
 export default function Form() {
     const [sku, setSku] = useState("");
@@ -15,6 +16,11 @@ export default function Form() {
 
     const handleSubmit = e => {
         e.preventDefault();
+        const err = validateForm(sku, name, price, type, size, height, width, length, weight);
+        setError(err);
+        if (err) return;
+        console.log("submitting");
+
     }
 
     return (
