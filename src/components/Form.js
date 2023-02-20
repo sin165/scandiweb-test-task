@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import StyledForm from "../components/styles/Form.styled";
+import { submitForm } from '../utils/submitForm';
 import { validateForm } from '../utils/validateForm';
 
 export default function Form() {
@@ -20,7 +21,7 @@ export default function Form() {
         setError(err);
         if (err) return;
         console.log("submitting");
-
+        submitForm(sku, name, price, type, size, height, width, length, weight);
     }
 
     return (
