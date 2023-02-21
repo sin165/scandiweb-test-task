@@ -5,7 +5,7 @@ const Products = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 6.75rem 2rem;
     color: #a68;
     font-size: 1.2rem;
 

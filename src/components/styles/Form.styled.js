@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Form = styled.form`
-    padding: 1rem 2rem;
+    padding: 6.75rem 2rem;
     color: #a68;
     font-size: 1.2rem;
     max-width: 500px;
