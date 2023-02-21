@@ -12,7 +12,7 @@ const Products = styled.section`
     div {
         padding: 1.5rem 2rem;
         min-width: 220px;
-        height: 136px;
+        min-height: 136px;
         box-shadow: 0 0 8px #a68;
         border-radius: 0.5rem;
         background-color: white;

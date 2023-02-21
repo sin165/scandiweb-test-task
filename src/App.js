@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<List products={products} />} />
+        <Route path="/" element={<List products={products} setProducts={setProducts} />} />
         <Route path="/addproduct" element={<Add setProducts={setProducts} />} />
       </Routes>
       <Footer />
