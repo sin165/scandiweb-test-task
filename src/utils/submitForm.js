@@ -13,15 +13,18 @@ export async function submitForm(sku, name, price, type, size, height, width, le
         formData.append('length', length);
     }
 
-    const response = await fetch("http://localhost:8001", {
-        method: 'POST',
-        headers: new Headers({
-            'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded',
-        }),
-        body: formData,
-    });
-    console.log(response);
-    const data = await response.json();
-    console.log('data', data);
+    try {
+        const response = await fetch("http://localhost:8001", {
+            method: 'POST',
+            headers: new Headers({
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }),
+            body: formData,
+        });
+        const data = await response.json();
+        return data;
+    } catch {
+        return {error: ['failed to fetch']};
+    }
 }

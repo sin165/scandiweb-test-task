@@ -4,7 +4,7 @@ import Header from "../components/styles/Header.styled";
 import Button from "../components/styles/Button.styled";
 import Form from "../components/Form";
 
-export default function Add() {
+export default function Add({setProducts}) {
     return (
         <>
             <Header>
@@ -14,7 +14,7 @@ export default function Add() {
                     <Button as={Link} to="/">Cancel</Button>
                 </div>
             </Header>
-            <Form />
+            <Form setProducts={setProducts} />
         </>
     );
 }

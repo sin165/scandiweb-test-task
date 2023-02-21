@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import StyledForm from "../components/styles/Form.styled";
 import { submitForm } from '../utils/submitForm';
 import { validateForm } from '../utils/validateForm';
+import { useNavigate } from 'react-router-dom';
 
-export default function Form() {
+export default function Form({setProducts}) {
     const [sku, setSku] = useState("");
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
@@ -14,14 +15,26 @@ export default function Form() {
     const [length, setLength] = useState("");
     const [weight, setWeight] = useState("");
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         const err = validateForm(sku, name, price, type, size, height, width, length, weight);
         setError(err);
         if (err) return;
         console.log("submitting");
-        submitForm(sku, name, price, type, size, height, width, length, weight);
+        const data = await submitForm(sku, name, price, type, size, height, width, length, weight);
+        if( data.error && data.error[0] === 'sku not unique') {
+            setError('Please, provide a unique SKU');
+            return;
+        }
+        if(data.error) {
+            console.log('error: ', data.error);
+            setError('Error when saving product');
+            return;
+        }
+        setProducts(data);
+        navigate('/', { replace: true });
     }
 
     return (
