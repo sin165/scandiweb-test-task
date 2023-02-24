@@ -14,7 +14,7 @@ export async function submitForm(sku, name, price, type, size, height, width, le
     }
 
     try {
-        const response = await fetch("http://localhost:8001", {
+        const response = await fetch(process.env.REACT_APP_BACKEND, {
             method: 'POST',
             headers: new Headers({
                 'Accept': 'application/json',

@@ -1,5 +1,5 @@
 export async function fetchList(setProducts) {
-    const response = await fetch("http://localhost:8001");
+    const response = await fetch(process.env.REACT_APP_BACKEND);
     const data = await response.json();
     setProducts(data);
 }
