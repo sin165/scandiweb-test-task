@@ -24,8 +24,8 @@ export default function List({products, setProducts}) {
             <Header>
                 <h1>Product List</h1>
                 <div>
-                    <Button as={Link} to="/addproduct">Add</Button>
-                    <Button className="delete-product-btn" onClick={handleMassDelete} >Mass Delete</Button>
+                    <Button as={Link} to="/addproduct">ADD</Button>
+                    <Button className="delete-product-btn" onClick={handleMassDelete} >MASS DELETE</Button>
                 </div>
             </Header>
             { products && <Products products={products} setProductsToDelete={setProductsToDelete} />}
